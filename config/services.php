@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'fake-store' => [
+        'base_url' => 'https://fakestoreapi.com/',
+    ],
+
 ];
