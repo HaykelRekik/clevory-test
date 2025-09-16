@@ -5,6 +5,7 @@ use App\Http\Controllers\API\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')
+    ->name('auth.')
     ->group(static function (): void {
         Route::post('login', [AuthController::class, 'login'])
             ->withoutMiddleware('auth:api')

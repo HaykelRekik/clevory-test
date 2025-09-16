@@ -36,7 +36,7 @@ class AuthController extends Controller
                 'id' => auth()->id(),
                 'token' => $token,
                 'expires_in' => JWTAuth::factory()->getTTL().' minutes',
-            ], status: 201);
+            ], status: 200);
 
     }
 
@@ -81,6 +81,6 @@ class AuthController extends Controller
             ->json(data: [
                 'token' => $token,
                 'expires_in' => JWTAuth::factory()->getTTL().' minutes',
-            ]);
+            ], status: 201);
     }
 }
