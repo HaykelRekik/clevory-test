@@ -18,7 +18,14 @@ class AuthController extends Controller
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'invalid credentials.'], 401);
+                return response()->json(
+                    data: [
+                        'title' => 'Unauthorized',
+                        'detail' => 'Invalid credentials',
+                        'status' => 401,
+                    ],
+                    status: 401
+                );
             }
         } catch (JWTException $exception) {
             return response()->json(['error' => 'could not create token'], 500);
@@ -26,9 +33,10 @@ class AuthController extends Controller
 
         return response()
             ->json(data: [
+                'id' => auth()->id(),
                 'token' => $token,
                 'expires_in' => JWTAuth::factory()->getTTL().' minutes',
-            ]);
+            ], status: 201);
 
     }
 

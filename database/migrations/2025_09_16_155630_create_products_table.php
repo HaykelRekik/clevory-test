@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('description', 1000);
             $table->string('category');
             $table->string('image');
-            $table->string('external_id');
+            $table->string('external_id')->nullable();
             $table->timestamps();
         });
     }
