@@ -51,5 +51,12 @@ Une collection Postman est incluse à la racine de ce projet (`Clevory Test.post
 Pour exécuter la suite de tests de l'application, utilisez la commande suivante:
 
 ```bash
+```bash
 php artisan test
 ```
+
+## Visualisation de la base de données
+
+Pour visualiser la base de données via Adminer, vous pouvez y accéder à [http://localhost:8081/](http://localhost:8081/).
+
+Utilisez les coordonnées présentes dans le fichier `.env` pour vous connecter 
